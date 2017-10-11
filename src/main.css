@@ -64,7 +64,7 @@ body
     border-color : black;
     border: 2px solid;
     border-radius : 5px;
-
+    line-height: 1;
 }
 
 .display-up

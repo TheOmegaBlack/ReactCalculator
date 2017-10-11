@@ -967,13 +967,13 @@ var _reactDom = __webpack_require__(18);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _ButtonBox = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"ButtonBox\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _ButtonBox2 = _interopRequireDefault(_ButtonBox);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(
-  'h1',
-  null,
-  'Hello, world! And a cake'
-), document.getElementById('root'));
+_reactDom2.default.render(_react2.default.createElement(_ButtonBox2.default, null), document.getElementById('root'));
 
 /***/ }),
 /* 16 */
