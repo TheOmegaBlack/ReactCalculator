@@ -182,14 +182,14 @@ class Calculator extends React.Component {
           </div>
           <div className="calculator-int">
             <div className="text-box">
-              <div type="text" name="upper-display" className="display-up">
+              <div className="display-up">
                 {this.state.equalized || this.state.chainOps ?
                   this.state.result :
                   this.state.number !== "" ?
                     this.state.number :
                     0}
               </div>
-              <div type="text" name="lower-display" className="display-down">
+              <div className="display-down">
                 {/*{this.state.numberSequence !== "" ? this.state.numberSequence : 0}*/
                   this.state.sequenceArray.join("") !== "" ? this.state.sequenceArray.join("") : 0
                 }
