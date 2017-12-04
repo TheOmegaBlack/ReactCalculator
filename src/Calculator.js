@@ -97,31 +97,33 @@ class Calculator extends React.Component {
       result: "",
       number: number,
       sequenceArray: sequenceArray,
-      // numberSequence:
-      //   `${
-      //   this.state.numberSequence !== "0" && !this.state.equalized ?
-      //   this.state.numberSequence :
-      //   ""
-      // }${event.target.value}`,
       equalized: false,
       chainOps: false,
-      currentIndex: currentIndex
+      currentIndex: currentIndex,
     })
   }
 
   operatorHandler(event){
-    const sequenceArray = this.state.sequenceArray.slice()
-    sequenceArray.push(event.target.value)
     if (this.state.number !== "") {
+      const sequenceArray = this.state.sequenceArray.slice()
+      const index = this.state.currentIndex
+      if(index === sequenceArray.length){
+        sequenceArray[index - 1] = event.target.value
+        this.setState({
+          operator: event.target.value,
+          sequenceArray
+        })
+        return
+      }
+      sequenceArray.push(event.target.value)
       let result = ""
       if (this.state.operator !== "") {
         result = this.execute()
       }
-      const oldNumber =
       this.setState({
         pointCheck: false,
         operator: event.target.value,
-        result: result,
+        result,
         oldNumber: this.state.operator === "" ?
           this.state.number :
           result !== "" ?
@@ -130,10 +132,9 @@ class Calculator extends React.Component {
         number: this.state.operator === "" ?
           "" :
           this.state.number,
-        // numberSequence: `${this.state.numberSequence}${event.target.value}`,
         chainOps: this.state.operator !== "",
         currentIndex: this.state.currentIndex += 2,
-        sequenceArray: sequenceArray
+        sequenceArray
       })
     }
   }

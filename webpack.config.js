@@ -3,6 +3,10 @@ module.exports = {
   output: {
     filename: 'bundle.js'
   },
+  devServer: {
+    inline:true,
+    port: 8008
+  },
   module: {
     rules: [
       {
