@@ -112,13 +112,13 @@ body
 
 .number-btn
 {
+    background-color: #AAA;
     margin-top:  7px;
     margin-left : 7px;
     height: 50px;
     width: 50px;
-    border-color: black;
     border-radius: 5px;
-    border: 0 solid;
+    border: 0 solid black;
     box-shadow: 0 3px #999;
 }
 
